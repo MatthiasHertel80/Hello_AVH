@@ -34,10 +34,11 @@ jobs:
   
       - name: Build
         run: |
+          cd ${{ github.workspace }}/hello_vsi/
           echo "Building get started example ..."
-          cbuild ${{ github.workspace }}/hello_vsi/hello_vsi.csolution.yml -c .event+Corstone_310 --packs --update-rte --toolchain GCC
+          cbuild hello_vsi.csolution.yml -c .event+Corstone_310 --packs --update-rte --toolchain GCC
 
       - name: Execute
         run: |
           echo "Running get started example ..."
-          FVP_Corstone_SSE-310 -a ${{ github.workspace }}/hello_vsi/out/hello_vsi/Corstone_310/event/hello_vsi.elf -C mps3_board.v_path=./source/VSI/data_sensor/python/
+          FVP_Corstone_SSE-310 -a ./out/hello_vsi/Corstone_310/event/hello_vsi.elf -C mps3_board.v_path=./source/VSI/data_sensor/python/
