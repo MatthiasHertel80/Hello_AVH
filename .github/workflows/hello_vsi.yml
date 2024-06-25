@@ -35,7 +35,7 @@ jobs:
       - name: Build
         run: |
           echo "Building get started example ..."
-          cbuild ${{ github.workspace }}/hello_vsi/hello_vsi.csolution.yml --packs --update-rte --toolchain GCC
+          cbuild ${{ github.workspace }}/hello_vsi/hello_vsi.csolution.yml -c .event+Corstone_310 --packs --update-rte --toolchain GCC
 
       - name: Execute
         run: |
