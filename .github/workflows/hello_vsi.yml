@@ -34,7 +34,7 @@ jobs:
   
       - name: Build
         run: |
-          cd Hello_AVH/hello_vsi
+          cd ${{ github.workspace }}
           echo "Building get started example ..."
           cbuild hello_vsi.csolution.yml --packs --update-rte --toolchain GCC
 
