@@ -42,6 +42,4 @@ jobs:
         run: |
           cd ${{ github.workspace }}/hello_vsi/
           echo "Running get started example ..."
-          FVP_Corstone_SSE-310 -a ./out/hello_vsi/Corstone_310/event/hello_vsi.elf \ 
-          -C mps3_board.v_path=./source/VSI/data_sensor/python/ \ 
-          -C mps3_board.visualisation.disable-visualisation=1
+          FVP_Corstone_SSE-310 -a ./out/hello_vsi/Corstone_310/event/hello_vsi.elf  -C mps3_board.v_path=./source/VSI/data_sensor/python/ -C mps3_board.visualisation.disable-visualisation=1
